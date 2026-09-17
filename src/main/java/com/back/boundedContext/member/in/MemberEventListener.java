@@ -1,7 +1,7 @@
-package com.back.boundedContext.member.eventListener;
+package com.back.boundedContext.member.in;
 
-import com.back.boundedContext.member.entity.Member;
-import com.back.boundedContext.member.service.MemberService;
+import com.back.boundedContext.member.domain.Member;
+import com.back.boundedContext.member.app.MemberService;
 import com.back.shared.post.event.PostCommentCreatedEvent;
 import com.back.shared.post.event.PostCreatedEvent;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +17,7 @@ import static org.springframework.transaction.event.TransactionPhase.AFTER_COMMI
 public class MemberEventListener {
     private final MemberService memberService;
 
+    // 글 작성 시 점수 3점 올림
     @TransactionalEventListener(phase = AFTER_COMMIT)
     @Transactional(propagation = REQUIRES_NEW)
     public void handle(PostCreatedEvent event) {
@@ -25,6 +26,7 @@ public class MemberEventListener {
         member.increaseActivityScore(3);
     }
 
+    // 댓글 작성 시 점수 1점 올림
     @TransactionalEventListener(phase = AFTER_COMMIT)
     @Transactional(propagation = REQUIRES_NEW)
     public void handle(PostCommentCreatedEvent event) {
