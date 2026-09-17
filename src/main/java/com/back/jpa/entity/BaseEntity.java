@@ -2,6 +2,7 @@ package com.back.jpa.entity;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.time.LocalDateTime;
 

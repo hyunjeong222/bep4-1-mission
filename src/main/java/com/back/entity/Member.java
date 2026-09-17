@@ -1,4 +1,4 @@
-package com.back.jpa.entity;
+package com.back.entity;
 
 import com.back.jpa.entity.BaseIdAndTime;
 import jakarta.persistence.Column;
