@@ -2,7 +2,7 @@ package com.back.boundedContext.member.app;
 
 import com.back.boundedContext.member.domain.Member;
 import com.back.boundedContext.member.out.MemberRepository;
-import com.back.rsData.RsData;
+import com.back.global.rsData.RsData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
