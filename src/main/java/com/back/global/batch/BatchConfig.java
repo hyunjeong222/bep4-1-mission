@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 @EnableBatchProcessing
 @EnableJdbcJobRepository
 public class BatchConfig {
+
     @Bean
     @Profile("!prod")
     public DataSourceInitializer notProdDataSourceInitializer(DataSource dataSource) {
